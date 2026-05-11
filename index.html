@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Broken Feelings</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  min-height:100%;
+  overflow-x:hidden;
+  font-family:Arial,sans-serif;
+  background:#050505;
+  color:white;
+}
+
+/* animated background */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+  linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+  url('https://github.com/balisticbase/GIORGI/raw/refs/heads/main/The%20longer%20.png');
+
+  background-size:cover;
+  background-position:center;
+  z-index:-2;
+
+  animation:bgAnim 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgAnim{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.08);
+  }
+}
+
+/* glow */
+
+.glow{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+
+  background:
+  radial-gradient(circle at top left,
+  rgba(255,0,80,.15),
+  transparent 35%),
+
+  radial-gradient(circle at bottom right,
+  rgba(0,120,255,.12),
+  transparent 35%);
+}
+
+/* header */
+
+header{
+  text-align:center;
+  padding:60px 20px 30px;
+}
+
+header h1{
+  font-size:3rem;
+  color:#ffb6c1;
+  letter-spacing:2px;
+
+  text-shadow:
+  0 0 10px rgba(255,120,140,.4),
+  0 0 25px rgba(255,0,80,.35);
+}
+
+header p{
+  margin-top:12px;
+  color:#d5c3c7;
+  opacity:.85;
+}
+
+/* gallery */
+
+.gallery{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:28px;
+}
+
+/* card */
+
+.card{
+  background:rgba(18,18,18,.72);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  backdrop-filter:blur(8px);
+
+  transition:.35s;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,.55);
+
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:
+  translateY(-6px)
+  scale(1.02);
+
+  border-color:
+  rgba(255,120,140,.35);
+
+  box-shadow:
+  0 15px 40px rgba(255,0,80,.2);
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+
+  transition:.4s;
+}
+
+.card:hover img{
+  transform:scale(1.04);
+  filter:brightness(1.05);
+}
+
+/* content */
+
+.content{
+  padding:20px;
+}
+
+.content h2{
+  margin-bottom:10px;
+  color:#ffd5dc;
+  font-size:1.3rem;
+}
+
+.content p{
+  color:#dddddd;
+  line-height:1.6;
+  font-size:.95rem;
+}
+
+.tag{
+  display:inline-block;
+
+  margin-top:15px;
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  background:#2b1117;
+
+  color:#ff9fb1;
+
+  font-size:.75rem;
+}
+
+/* footer */
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  color:#8f747a;
+  font-size:.85rem;
+}
+
+/* mobile */
+
+@media(max-width:700px){
+
+  header h1{
+    font-size:2rem;
+  }
+
+  .card img{
+    height:220px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop playsinline preload="auto">
+  <source src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/ioscrack.online.m4a" type="audio/mp4">
+</audio>
+
+<header>
+  <h1>🩸 BROKEN FEELINGS</h1>
+  <p>dark memories • cruel love • emotional collapse</p>
+</header>
+
+<section class="gallery">
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Apple.jpeg">
+
+    <div class="content">
+      <h2>Cold Silence</h2>
+
+      <p>
+        She slowly became colder every day.
+        I watched love disappear in her eyes
+        while pretending nothing changed.
+      </p>
+
+      <span class="tag">Emotional Damage</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Browser.jpeg">
+
+    <div class="content">
+      <h2>Hidden Tabs</h2>
+
+      <p>
+        The truth was hidden behind passwords,
+        deleted messages and fake smiles.
+      </p>
+
+      <span class="tag">Betrayal</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Mail.ru.jpeg">
+
+    <div class="content">
+      <h2>Unread Goodbye</h2>
+
+      <p>
+        I kept sending messages at night.
+        She saw every one of them.
+        Never answered.
+      </p>
+
+      <span class="tag">Manipulation</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Opened.jpeg">
+
+    <div class="content">
+      <h2>Opened</h2>
+
+      <p>
+        The most painful thing
+        was not hatred.
+        It was indifference.
+      </p>
+
+      <span class="tag">Mental Trauma</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Opera.jpeg">
+
+    <div class="content">
+      <h2>Opera Of Lies</h2>
+
+      <p>
+        Beautiful acting.
+        Perfect manipulation.
+        Every kiss hid another secret.
+      </p>
+
+      <span class="tag">False Love</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/balisticbase/GIORGI/raw/refs/heads/main/Safari.jpeg">
+
+    <div class="content">
+      <h2>Last Search</h2>
+
+      <p>
+        “How to stop loving someone
+        who destroys you?”
+      </p>
+
+      <span class="tag">Heartbreak</span>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+⚡ some memories never disappear ⚡
+</footer>
+
+<script>
+
+/* ===== CARD ANIMATION ===== */
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card,index)=>{
+
+  setTimeout(()=>{
+
+    card.classList.add("show");
+
+  }, index * 180);
+
+});
+
+/* ===== IMAGE FALLBACK ===== */
+
+document.querySelectorAll("img").forEach(img=>{
+
+  img.onerror = function(){
+
+    this.src =
+    "https://picsum.photos/800/600?grayscale";
+
+  };
+
+});
+
+/* ===== MUSIC SYSTEM ===== */
+
+const music =
+document.getElementById("bgMusic");
+
+music.volume = 1.0;
+
+/* force play */
+
+async function forcePlay(){
+
+  try{
+
+    await music.play();
+
+  }catch(e){}
+
+}
+
+/* aggressive anti-pause */
+
+[
+"click",
+"touchstart",
+"touchend",
+"mousemove",
+"keydown",
+"scroll"
+].forEach(event=>{
+
+  document.addEventListener(
+    event,
+    forcePlay,
+    { passive:true }
+  );
+
+});
+
+/* if tab active again */
+
+document.addEventListener(
+"visibilitychange",
+()=>{
+
+  if(!document.hidden){
+
+    forcePlay();
+
+  }
+
+});
+
+/* if browser paused */
+
+music.addEventListener(
+"pause",
+()=>{
+
+  setTimeout(()=>{
+
+    forcePlay();
+
+  },500);
+
+});
+
+/* constant checking */
+
+setInterval(()=>{
+
+  if(music.paused){
+
+    forcePlay();
+
+  }
+
+},2000);
+
+/* startup */
+
+window.addEventListener(
+"load",
+()=>{
+
+  forcePlay();
+
+});
+
+/* ios unlock */
+
+document.body.addEventListener(
+"touchstart",
+()=>{
+
+  forcePlay();
+
+},{ once:true });
+
+</script>
+
+</body>
+</html>
